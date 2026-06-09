@@ -46,7 +46,6 @@ export async function searchJobs(
   url.searchParams.set("app_id", appId);
   url.searchParams.set("app_key", appKey);
   url.searchParams.set("results_per_page", String(resultsPerPage));
-  url.searchParams.set("content-type", "application/json");
 
   if (params.what) url.searchParams.set("what", params.what);
   if (params.where) url.searchParams.set("where", params.where);
@@ -56,11 +55,13 @@ export async function searchJobs(
     url.searchParams.set("salary_min", String(params.salaryMin));
 
   const res = await fetch(url.toString(), {
-    next: { revalidate: 300 }, // cache for 5 minutes
+    next: { revalidate: 300 },
   });
 
   if (!res.ok) {
-    throw new Error(`Adzuna API error: ${res.status}`);
+    const errorBody = await res.text();
+    console.error("Adzuna error response:", res.status, errorBody);
+    throw new Error(`Adzuna API error: ${res.status} - ${errorBody}`);
   }
 
   return res.json();
