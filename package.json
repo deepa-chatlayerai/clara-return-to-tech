@@ -1,0 +1,24 @@
+{
+  "name": "clara",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run build --workspace=apps/web",
+    "db:generate": "prisma generate --schema=apps/web/prisma/schema.prisma",
+    "db:push": "prisma db push --schema=apps/web/prisma/schema.prisma",
+    "db:migrate": "prisma migrate dev --schema=apps/web/prisma/schema.prisma",
+    "db:studio": "prisma studio --schema=apps/web/prisma/schema.prisma"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.2"
+  }
+}

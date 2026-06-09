@@ -1,0 +1,24 @@
+{
+  "name": "@clara/db",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:generate": "dotenv -e ../../.env -- prisma generate",
+    "db:migrate": "dotenv -e ../../.env -- prisma migrate dev",
+    "db:push": "dotenv -e ../../.env -- prisma generate && dotenv -e ../../.env -- prisma db push",
+    "db:studio": "dotenv -e ../../.env -- prisma studio",
+    "db:seed": "dotenv -e ../../.env -- ts-node prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.10.2"
+  },
+  "devDependencies": {
+    "dotenv-cli": "7.4.2",
+    "prisma": "^5.10.2",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
