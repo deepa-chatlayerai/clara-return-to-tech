@@ -84,11 +84,12 @@ export default function LandingPage() {
       {/* Story */}
       <section className="bg-surface border-y border-border py-20">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <p className="text-xl text-text-primary leading-relaxed mb-6 font-medium">
-            "I built Clara because I needed it. Two kids, living abroad, 7 years out of the industry —
-            and no tool that understood what that actually felt like."
+          <p className="text-xl text-text-primary leading-relaxed mb-4 font-medium">
+            Built with purpose, for women returning to tech and rediscovering what they're capable of.
           </p>
-          <p className="text-text-muted text-sm font-semibold">— Deepa, founder of Clara. Brussels, Belgium</p>
+          <p>
+             <p className="text-text-muted text-sm font-semibold">— Deepa, founder of Clara. Antwerp, Belgium</p>
+          </p>
         </div>
       </section>
 
@@ -107,7 +108,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="border-t border-border py-8 text-center text-sm text-text-muted font-medium">
-        <p>Clara — Made with care for women returning to tech — Brussels</p>
+        <p>Clara — Made with care for women returning to tech — Antwerp</p>
       </footer>
     </main>
   );

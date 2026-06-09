@@ -32,7 +32,7 @@ export function TopBar({ user }: TopBarProps) {
       <div className="flex items-center gap-3">
         <button className="flex items-center gap-1.5 text-xs font-semibold text-text-muted hover:text-text-primary border border-border rounded-lg px-3 py-2 transition-colors">
           <MapPin size={13} />
-          Brussels, Belgium
+          Antwerp, Belgium
         </button>
         <Link href="/dashboard/cv" className="btn-primary text-xs px-3 py-2 flex items-center gap-1.5">
           <Sparkles size={13} />
